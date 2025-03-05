@@ -1,0 +1,7 @@
+CREATE TABLE book (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    isbn VARCHAR(13) UNIQUE NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    status VARCHAR(20) NOT NULL CHECK (status IN ('DISPONIVEL', 'EMPRESTADO', 'RESERVADO'))
+);
